@@ -1,5 +1,0 @@
-rootProject.name = '_4_balls_challenge'
-include 'src'
-include 'src:main'
-findProject(':src:main')?.name = 'main'
-
