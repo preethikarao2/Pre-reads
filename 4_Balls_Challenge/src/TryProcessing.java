@@ -5,7 +5,6 @@ public class TryProcessing extends PApplet{
     public static final int height = 480;
     public static final int diameter = 10;
     int ball1Speed,ball2Speed,ball3Speed,ball4Speed =0;
-    
 
     public static void main(String[] args) {
         PApplet.main("TryProcessing", args);
