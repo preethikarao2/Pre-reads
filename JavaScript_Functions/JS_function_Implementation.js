@@ -1,60 +1,35 @@
-MAP:
------
-function double(n){
-   return 2*n;
+numbers = [2,3,4,5,6]
+sum = 0;
+function doubleMap(number) {
+    return number*number;
 }
-
-arr = [1,2,3,4,5]
-map(arr,double){
-   const res_arr=[];
-   for(let i =0;i<arr.length;i++){
-      let res = double(arr[i]);
-      res_arr.push(res);
-   }
-   return res_arr;
+function checkIfEven(number) {
+    if(number%2==0)
+    return number;
 }
-
-FILTER:
----------
-function canVote(age){
-   if (age >= 18){
-      return true;
-   }
-   return false;
+function sumArray(number) {
+    sum = sum+number;
+    return sum;
 }
-
-arr = [18,21,13,40,5]
-filter(arr,canVote){
-   const res_arr=[];
-   for(let i =0;i<arr.length;i++){
-      let res = canVote(arr[i]);
-      if(res){
-      res_arr.push(res);
-      }
-   }
-   return res_arr;
+function getElement(number) {
+    return number;
 }
-
-REDUCE:
---------
-function sum(arr){
-   let ans = 0;
-   for(let i=0;i<arr.length;i++){
-      ans += arr[i];
-   }
+const calculate = function(numbers,logic) {
+    let output = []
+    for(iter=0;iter < numbers.length;iter++) {
+        result = logic(numbers[iter]);
+        if(result)
+        output.push(result);
+    }
+    return output;
+    
 }
-
-arr = [18,21,13,40,5]
-function Reduce(arr,sum){
-   const res = sum(arr);
-   return res;
-}
-
-FOREACH:
----------
-
-function forEach(arr){
-   for(let i=0;i<arr.length;i++){
-      //Any implementation
-   }
-}
+console.log("map function without inbuilt function");
+console.log(calculate(numbers,doubleMap));
+console.log("filter function without inbuilt function");
+console.log(calculate(numbers,checkIfEven));
+console.log("reduce function without inbuilt function");
+calculate(numbers,sumArray);
+console.log(sum);
+console.log("for each function without inbuilt function");
+console.log(calculate(numbers,getElement));
